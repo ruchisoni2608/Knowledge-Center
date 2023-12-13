@@ -1,0 +1,53 @@
+Certainly! Here's a list of some commonly used Git commands:
+
+Initialization and Configuration:
+
+git init: Initialize a new Git repository.
+git clone <repository_url>: Clone a remote Git repository to your local machine.
+git config: Configure Git settings (e.g., name, email, editor, etc.).
+git remote add <name> <repository_url>: Add a remote repository.
+git remote -v: List remote repositories.
+Status and Changes:
+
+git status: Show the status of your working directory.
+git diff: Show differences between your working directory and the last commit.
+git add <file>: Stage changes for the next commit.
+git commit -m "<message>": Commit staged changes with a message.
+git log: Display commit history.
+Branching and Merging:
+
+git branch: List branches.
+git branch <branch_name>: Create a new branch.
+git checkout <branch_name>: Switch to a different branch.
+git merge <branch_name>: Merge changes from one branch into the current branch.
+git pull origin <branch_name>: Pull changes from a remote repository.
+git push origin <branch_name>: Push local commits to a remote repository.
+Stashing and Reverting:
+
+git stash: Temporarily save changes that are not ready to be committed.
+git stash pop: Apply the last stash and remove it from the stash list.
+git reset <file>: Unstage changes from a file.
+git checkout -- <file>: Discard changes in a file and restore it to the last commit state.
+git revert <commit>: Create a new commit that undoes changes made in a previous commit.
+Remote Repositories:
+
+git pull origin <branch_name>: Fetch changes from a remote repository and merge them.
+git push origin <branch_name>: Push local commits to a remote repository.
+git remote -v: List remote repositories and their URLs.
+Tags and Releases:
+
+git tag: List tags.
+git tag -a <tag_name> -m "<message>": Create an annotated tag.
+git push --tags: Push tags to a remote repository.
+Miscellaneous:
+
+git rm <file>: Remove a file from the working directory and commit history.
+git mv <old_name> <new_name>: Move or rename a file.
+git help <command>: Display help for a specific Git command.
+
+
+
+git pull origin development
+git fetch
+git checkout
+git checkout branchname

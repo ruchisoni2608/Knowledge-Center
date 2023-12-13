@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello, World!</title>
+    
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <form id="myForm">
+    <input type="text" id="numberInput" placeholder="Enter a number (1 or more digits)">
+    <select id="optionsDropdown"></select>
+    <input type="submit" value="Submit">
+  </form>
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+      <script src="script.js"></script>
+  </body>
+</html>
+<script
+  $(document).ready(function() {
+      $('#numberInput').on('input', function() {
+        var enteredNumber = $(this).val();
+        $('#optionsDropdown').empty();
+
+        if (/^\d+$/.test(enteredNumber)) {
+          var numOptions = parseInt(enteredNumber);
+
+          if (numOptions >= 1 && numOptions <= 9) {
+            for (var i = 1; i <= numOptions; i++) {
+              $('#optionsDropdown').append('<option value="' + i + '">Option ' + i + '</option>');
+            }
+          } else {
+            alert('Please enter a number between 1 and 9.');
+          }
+        } 
+      });
+    });
+</script>

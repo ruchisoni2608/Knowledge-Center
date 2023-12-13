@@ -1,0 +1,133 @@
+	
+give permittion to anything	=
+	sudo chmod -Rv 777 /var/www/html
+
+ apache start in ubantu =
+	 sudo systemctl start apache2 
+ 
+mysql start in ubantu=
+	sudo systemctl start mysql
+
+create Project	=
+	composer create-project laravel/laravel project-name
+	cd blog
+
+
+for all cache clear= 
+ 	php artisan optimize:clear
+ 	
+for model and migration and controller =
+	php artisan make:model Post -mcr
+
+php artisan make:controller PostController
+php artisan make:model Post -m
+
+in route file =
+	use Illuminate\Support\Facades\Route;
+	use App\Http\Controllers\PostController;
+
+	Route::get('/', [PostController::class, 'index']);
+	Route::get('/posts/{post}', [PostController::class, 'show']);
+
+ 	
+Migrate	=
+	php artisan migrate
+	
+specific table migration	
+	php artisan migrate –path=/database/migrations/2014_10_12_000000_create_users_table.php
+	
+specific table rollback migration =
+	php artisan migrate:rollback –path=/database/migrations/2014_10_12_000000_create_users_table.php
+	
+check migration run or not=
+	php artisan migrate:status 
+	
+specif column add to existing table =
+	php artisan make:migration add_paid_to_users_table –table=users
+	
+Add new column with foreign key =
+	Schema::table('menus', function (Blueprint $table) {     
+	$table->unsignedBigInteger('parent_id')->nullable()->after('id');         
+	$table->foreign('parent_id')->references('id')->on('menus');      
+	});
+	
+Create a Post Seeder=
+	php artisan make:seeder Seedername
+
+Edit the seeder file in database/seeders to populate the posts table with sample data.
+Seed the Database =
+	php artisan db:seed --class=PostSeeder
+
+	
+	
+When want to remove unwanted double quotes=
+	$json = json_encode($musicas);
+	$json = preg_replace('/["]/', '' ,$json);
+	$json = str_replace(':',':"', $json); 
+	$json = str_replace(',','",',$json); 
+	$json = str_replace('}]','"}]',$json); 
+	echo $json;
+	
+	
+	
+	  'password' => 'required|string|min:8|confirmed|regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]+$/',               'password_confirmation' => 'required'                //'password' =>'regex' => 'The password must include at least one uppercase letter, one lowercase letter, one digit, and one special character.'],         
+	
+	
+	
+	  <select class="form-select" id="exampleFormControlSelect9" name="category_id">                              							@foreach ($blogcategories as $category)                                    
+	  <option @selected($category->id == $blogarticle->category_id) value="{{ $category->id }}">{{ $category->name }}                                     </option>                                 @endforeach                             </select>
+	
+	
+for create blade when placwehpoder and if olad value is there that display=
+	<div class="col-sm-4 mb-2">
+            <label>First Name <span class="text-danger">*</span></label>
+            <input type="text" name="first_name" class="form-control grey-input"
+                placeholder="First Name" value="{{ $userDetails->first_name ?? '' }}">
+        </div>
+	
+
+for select dropdown fetch db sdata=
+	<div class="col-sm-4 mb-2">
+            <label>Aircall Type <span class="text-danger">*</span></label>
+            <select class="form-select custom-select fw-bold grey-input me-2 me-2"
+                name="aircall_type_id">
+                <option value="">-- Select Type --</option>
+                @foreach ($aircallType as $value)
+                    <option value="{{ $value->id }}"
+                        {{ old('aircall_type_id') == $value->id ? 'selected' : '' }}>
+                        {{ $value->name }}</option>
+                @endforeach
+            </select>
+            @error('aircall_type_id')
+                <p class="text-danger">{{ $message }}</p>
+            @enderror
+        </div>
+	
+tesxtarea=
+	 <div class="col-sm-6 mb-2">
+            <label>Charge Notes</label>
+            <textarea class="form-control grey-input" placeholder="Charge Notes" rows="5" name="charge_notes"
+                value="">{{ old('charge_notes') }}</textarea>
+            @error('charge_notes')
+                <p class="text-danger">{{ $message }}</p>
+            @enderror
+        </div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	Cache Management:
+
+php artisan cache:clear
+php artisan config:cache
+php artisan config:clear
+php artisan route:cache
+php artisan route:clear
+php artisan optimize:clear

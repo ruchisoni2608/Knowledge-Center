@@ -1,0 +1,52 @@
+strlen() - Return the Length of a String
+strrev() - Reverse a String
+str_replace() - Replace Text Within a String
+min() and max()
+sqrt() -square root of a number
+round() - function rounds a floating-point number to its nearest integer:
+rand()  -function generates a random number:optional min and max parameters [rand(10, 100)]
+
+array()	Creates an array =array(value1, value2, value3, etc.)
+array_combine() function creates an array by using the elements from one "keys" array and one "values" array. =array_combine(keys, values)
+array_count_values() function counts all the values of an array. =array_count_values(array)
+The array_diff() function compares the values of two (or more) arrays =array_diff(array1, array2, array3, ...)
+The array_intersect() function compares the values of two (or more) arrays, and returns the matches.=array_intersect(array1, array2, array3, ...)
+The array_intersect_assoc() function compares the keys and values of two (or more) arrays, and returns the matches.
+array_intersect_assoc(array1,array2,array3, ...)
+array_key_exists() function checks an array for a specified key, and returns true if the key exists and false if the key does not exist.=array_key_exists(key, array)
+array_map() method allows you to iterate over an array and modify its elements using a callback function.
+array_map(myfunction, array1, array2, array3, ...)
+array_merge() function merges one or more arrays into one array.=array_merge(array1, array2, array3, ...)
+The array_pop() function deletes the last element of an array.=array_pop(array)
+array_push() function inserts one or more elements to the end of an array.=array_push(array, value1, value2, ...)
+array_reverse() function returns an array in the reverse order.
+array_search() function search an array for a value and returns the key first matching key is returned..=array_search(value, array, strict)
+compact() function creates an array from variables and their values.=compact(var1, var2...)
+The count() function returns the number of elements in an array.=count(array, mode)
+
+ join() function returns a string from the elements of an array.
+implode() function returns a string from the elements of an array.
+explode() function breaks a string into an array.=explode(separator,string,limit)
+html_entity_decode() function converts HTML entities to characters.
+htmlentities() function converts characters to HTML entities.
+
+strtoupper() function converts a string to uppercase.
+strtolower() - converts a string to lowercase
+lcfirst() - converts the first character of a string to lowercase
+ucfirst() - converts the first character of a string to uppercase
+ucwords() - converts the first character of each word in a string to uppercase
+ md5() function calculates the MD5 hash of a string.
+ number_format() function formats a number with grouped thousands.
+ strcmp() function compares two strings. case-sensitive. =strcmp(string1,string2)
+
+date_create() function returns a new DateTime object.=<?php $date=date_create("2013-03-15");echo date_format($date,"Y/m/d");?>
+date_diff() function returns the difference between two DateTime objects. =date_diff(datetime1, datetime2, absolute)
+date_format() function returns a date formatted according to the specified format.=date_format(object, format)
+
+getdate() function returns date/time information of a timestamp or the current local date/time.
+print_r(getdate());$mydate=getdate(date("U"));
+echo "$mydate[weekday], $mydate[month] $mydate[mday], $mydate[year]";
+
+To create a constant, use the define() function.
+Syntax
+define(name, value, case-insensitive)
