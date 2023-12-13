@@ -1,0 +1,20 @@
+RewriteEngine On 
+RewriteRule ^upload_subscribers/(.*)$ upload_subscribers.php?data=$1 [L]
+
+RewriteRule ^import_subscribers/(.*)$ import_subscribers.php?data=$1 [L]
+
+RewriteRule ^send_campaign_to_subscribers/(.*)$ send_campaign_to_all.php?data=$1 [L]
+LimitRequestBody 1024000000
+#RewriteRule ^avani/(.*)$ test2.php?data=$1 [L]
+
+<IfModule mod_php5.c>
+php_value max_execution_time 30000
+</IfModule>
+======================
+
+
+exec('lynx -dump http://intelligentmessage.io/send_campaign_to_subscribers/' . escapeshellarg(json_encode($my_arr)) . '> /dev/null &');
+//$output = exec('lynx -dump http://intelligentmessage.io/send_campaign_to_subscribers/' . escapeshellarg(json_encode($my_arr)), $output2);
+//echo $output;
+//print_r($output2);
+//die;

@@ -1,0 +1,206 @@
+*) Add Ubuntu instance into ec2 : 
+https://www.cloudbooklet.com/create-an-ec2-instance-on-aws-with-ubuntu-18-04/
+
+*) Add inbound rules in security groups : 
+IP version  Type          Protocol  Port range
+
+IPv6	    SSH	          TCP	    22
+IPv4	    SSH	          TCP	    22
+IPv6	    All traffic	  All	    All
+IPv4	    All traffic	  All	    All
+IPv6	    Custom TCP	  TCP	    8080
+IPv4	    Custom TCP	  TCP	    8080
+IPv6	    HTTP	      TCP	    80
+IPv4	    HTTP	      TCP	    80
+
+
+*) Then try to connect your instance with FTP (Filezills) : 
+SFTP : 
+host : your instance public ip
+user : ubuntu
+password : key file ppk
+
+Usernames of EC2 instances : 
+https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/connection-prereqs.html
+
+*) Connect to EC2 instance using your private key ( Key Pair )
+
+*) Update your Libraries
+sudo apt-get update
+
+*) Install Apache2
+sudo apt-get install apache2
+
+*) Now copy the IPv4 Public IP Address of your EC2 instance and hit on the browser. If you see a screen "Apache2 Ubuntu Default Page" , you are good to go. Apache server is working!
+
+*) Install PHP and useful packages
+sudo apt-get install php
+
+php --version
+
+sudo apt-get install php7.4-cli php7.4-common php7.4-curl php7.4-gd php7.4-json php7.4-mbstring php7.4-intl php7.4-mysql php7.4-xml php7.4-zip
+
+*) Usually, when a user requests a directory from the web server, Apache will first look for a file named index.html. If you want to change Apache to serve php files rather than others, move index.php to first position in the dir.conf file as shown below.
+
+sudo vi /etc/apache2/mods-enabled/dir.conf
+
+`<IfModule mod_dir.c>
+        DirectoryIndex index.php index.cgi index.pl index.html index.xhtml index.htm
+</IfModule>`
+
+*) Install MySQL Server
+sudo apt-get install mysql-server
+
+*) Configuring MySQL
+sudo mysql_secure_installation
+
+*) sudo mysql
+
+*) To configure the root account to authenticate with a password, run the following ALTER USER command. Note that this command will change the root password you set in mysql_secure_installation .
+
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'yourpassword';
+
+*) Then, run FLUSH PRIVILEGES which tells the server to reload the grant tables and put your new changes into effect:
+FLUSH PRIVILEGES;
+
+*) Then exit mysql : mysql> exit
+
+*) Install Composer
+sudo apt-get update
+
+sudo apt-get install curl
+
+sudo curl -s https://getcomposer.org/installer | php
+
+sudo mv composer.phar /usr/local/bin/composer
+
+composer
+
+*) Install Git
+sudo apt-get install git-core
+
+*) Clone Your Repository
+Change to /var/www/html directory and clone your Laravel Project there using following commands.
+cd /var/www/html
+sudo git clone https://github.com/username/reponame.git
+cd reponame
+
+*) Chnage permission of "reponame" directory
+sudo chmod -Rv 777 reponame
+
+*) Adding .env File to your Laravel project
+sudo vi .env
+
+*) Installing Libraries In Project
+sudo composer install
+
+*) Read Write Permissions for your Project
+sudo chmod 777 -R storage/
+sudo chmod 777 -R bootstrap/
+
+*) cd /
+*) Apache Configuration
+sudo vi /etc/apache2/sites-available/000-default.conf
+
+set below lines :
+ServerAdmin webmaster@localhost
+DocumentRoot /var/www/html/reponame/
+
+*) Restart your Apache
+sudo systemctl restart apache2
+
+*) Install phpmyadmin amazon ec2 ubuntu
+sudo apt install phpmyadmin
+
+When the first option is appear, you need to select apache2. Now it hasn’t been selected.
+Use space bar to select apache2 web server. Then press Tab key that takes us to the Ok button. After that, press enter.
+
+The next option is to configure the database for PHPMyAdmin with dbconfig-common. Select the Yes option here.
+
+After that, password configuration is appear on your terminal screen. And it is asked for login to phpmyadmin. So, you can set your phpmyadmin access password here:
+
+*) Configure phpmyadmin in ubuntu ec2
+In this step, open again your ssh terminal and run the following command to configure phpmyadmin in apache2.conf file:
+sudo nano /etc/apache2/apache2.conf
+
+After that, add the following line into apache2.conf file and save it:
+Include /etc/phpmyadmin/apache.conf
+
+*) Enable MySQL root Login for phpmyadmin ubuntu aws
+Note that, By default root cannot login as root user through phpMyAdmin.
+
+So, open your ssh terminal and type the following command to enable/allow mysql root login access for phpmyadmin on ubuntu aws web server:
+sudo mysql -u root -p
+
+Then type this following query:
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';
+
+Note that, Replace password by the root password you entered while installing MySql.
+After that type following query to changes into effect:
+FLUSH PRIVILEGES;
+exit
+
+*) Restart Apache Web Server
+sudo service apache2 restart
+
+*) Access phpmyadmin Amazon ec2
+http://[SERVER_PUBLIC_IP]/phpmyadmin
+
+*) Update php.ini variables : 
+sudo vi /etc/php/7.4/apache2/php.ini
+
+update below value : 
+
+max_execution_time-1000
+post_max_size=128M
+upload_max_filesize=128M
+
+*) Restart Apache Web Server
+sudo service apache2 restart
+
+*) Remove index.php from laravel url in AWS ec2 :
+1) First of All you need to set AllowOverride All in /etc/apache2/apache2.conf. 
+sudo vi /etc/apache2/apache2.conf
+
+Find the following block:
+<Directory /var/www/>
+        Options Indexes FollowSymLinks
+        AllowOverride All
+        DirectoryIndex index.php
+        Require all granted
+</Directory>
+
+DO NOT FORGET to run : 
+sudo a2enmod rewrite
+
+and then :
+sudo service apache2 restart
+
+*) All done. 
+
+
+
+====================================
+Extra notes : 
+
+Setup multiple website in single ec2 instance :
+https://www.eternalsoftsolutions.com/blog/how-to-setup-multiple-websites-in-a-single-aws-instance/
+
+https://w3path.com/point-domain-to-aws-ec2-instance/
+
+*) 'yum' is equivalent to "sudo apt-get" in ubuntu.
+
+
+To add vertual host in AWS ec2 : 
+1) sudo vi /etc/apache2/ports.conf
+2) Add line below : Listen 8090 (port you wish)
+3) sudo vi /etc/apache2/sites-available/000-default.conf
+4) <VirtualHost *:8090>
+        ServerName ec2-54-66-166-79.ap-southeast-2.compute.amazonaws.com:8090
+        ServerAdmin webmaster@localhost
+        DocumentRoot /var/www/html/soga_central/public/
+
+        ErrorLog ${APACHE_LOG_DIR}/error.log
+        CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>
+5) sudo systemctl restart apache2 (Restart Apache)

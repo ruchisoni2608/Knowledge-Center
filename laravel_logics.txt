@@ -1,0 +1,33 @@
+Jquery remote validations to check unique email : 
+Jquery :----
+
+remote: {
+    url: "http://"+location.host+"/validation/checkemail",
+    type: "get",
+    data: {
+        email: function () {
+            return $("input[name='email']").val();
+        }
+    }
+}
+
+Laravel :----
+
+use Illuminate\Contracts\Validation\Validator;
+
+
+if(isset($request->id)){
+    $rule = 'required|email|unique:users,email,'.$request->id;
+}else{
+    $rule = 'required|email|unique:users,email';
+}
+
+$validator = Validator::make($request->all(), [
+    'email' => $rule
+]);
+
+if ($validator->fails()) {
+    return false;
+} else {
+    return true;
+}

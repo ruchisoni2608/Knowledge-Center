@@ -1,0 +1,27 @@
+Assign primary key :
+ALTER TABLE `table_name` ADD PRIMARY KEY (id);
+
+Add autoincrement :
+ALTER TABLE `db_name`.`table_name` MODIFY `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY; 
+
+Modify columns in table : 
+ALTER TABLE `db_name`.`table_name` MODIFY `created_at` timestamp NOT NULL DEFAULT current_timestamp(), MODIFY `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp();
+
+Add columns in table : 
+ALTER TABLE `db_name`.`table_name` ADD `menu_order` INT NULL AFTER `description`;
+
+Drop columns in table :
+ALTER TABLE `db_name`.`table_name` DROP COLUMN `btntextcolor`, DROP COLUMN `btncolor`;
+
+Insert : 
+INSERT INTO `table_name` (`id`, `segment_code`, `segment_type`, `title`, `subtitle`, `description`, `button`, `sections`, `banner`, `images`, `active`, `created_time`, `updated_time`) VALUES (NULL, 'SPACER', '7', '0', '0', '0', '0', '0', '0', '0', '1', '2022-01-23 11:00:00', '2022-01-23 23:57:32');
+
+Update : 
+UPDATE `db_name`.`table_name` SET `subtitle` = '1' WHERE `segment_code` = 'INN4D'; 
+
+Delete : 
+DELETE from `db_name`.`table_name` WHERE `id`=1;
+
+Copy rows from one table to another table in mysql : 
+INSERT INTO `table_name` (pop_text,pop_value,`active`) SELECT pop_text,pop_value,`active` FROM `from_table_name` WHERE id IN(1,3,5);
+DB::statement($query); 

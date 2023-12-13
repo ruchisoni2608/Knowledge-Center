@@ -1,0 +1,89 @@
+To Stop mysql service : sudo service mysql stop
+---------------------------------
+To Stop apache2 service : sudo service apache2 stop
+--------------------------------
+To check java/JDK installed or not : java -version
+----------------------------------
+To install JDK : sudo apt install openjdk-8-jre-headless
+
+Set environment variable after installing JDK : export JAVA_HOME=/home/hashcrypt-16/.jdk
+--------------------------------
+To install jre : sudo apt install jre
+-------------------------------
+To install gtk packages : sudo apt install libcanberra-gtk-module libcanberra-gtk3-modul
+---------------------------------
+To install .sh file from downloads : 
+Ex. = Netbeans Installation 
+-> sudo chmod +x Apache-Netbeans-12.3-bin-linux-x64.sh
+-> ./Apache-Netbeans-12.3-bin-linux-x64.sh
+----------------------------------
+When face accessibility issue when install netbeans : sudo sed -i -e '/^assistive_technologies=/s/^/#/' /etc/java-*-openjdk/accessibility.properties
+---------------------------------
+To check what process is running or not : snap changes
+--------------------------------
+To successfully install netbeans : 
+-> sudo apt update
+-> sudo apt install openjdk-11-jdk
+-> java -version
+	-> Output : 
+		openjdk version "1.8.0_191"
+		OpenJDK Runtime Environment (build 1.8.0_191-8u191-b12-2ubuntu0.18.04.1-b12)
+		OpenJDK 64-Bit Server VM (build 25.191-b12, mixed mode)
+-> sudo snap install netbeans --classic	
+	-> Output : 
+		netbeans 10.0 from 'apache-netbeans' installed
+----------------------------------------
+To install .deb file: 
+
+1. Alternatively, you can also install a .deb file by opening a terminal and typing:
+sudo dpkg -i package_file.deb
+
+2. To uninstall a .deb file, remove it using Adept, or type:
+sudo apt-get remove package_name
+-----------------------------------------
+To add mysql and phpmyadmin in docker containers : 
+https://towardsdatascience.com/how-to-run-mysql-and-phpmyadmin-using-docker-17dfe107eab7
+https://migueldoctor.medium.com/run-mysql-phpmyadmin-locally-in-3-steps-using-docker-74eb735fa1fc
+
+-> docker network ls (Pick folder default network eg. hyperion_default)
+-> docker ps -a (Pick mysql container name eg. my-own-mysql)
+-> docker pull phpmyadmin/phpmyadmin:latest (download the latest stable version of the image)
+-> docker run --name stand-alone-phpmyadmin -d --network hyperion_default --link my-own-mysql:db -p 8081:80 phpmyadmin/phpmyadmin
+-> docker ps -a (check phpmyadmin added or not)
+---------------------------------------------
+if Dock station returns init error : 
+run below command in ubuntu system root :
+sudo setfacl -m user:${USER}:rw /var/run/docker.sock
+---------------------------------------------
+for npm error in hyperion-scheduler when build into linux
+run below commands in container path
+You need to explicitly install node / npm in your container before running npm install. Add this to your Dockerfile.
+
+sudo apt-get update && apt-get install -y curl
+sudo curl -sL https://deb.nodesource.com/setup_8.x | bash -
+sudo apt-get update && apt-get install -y nodejs
+
+---------------------------------------------
+sudo curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+---------------------------------------------
+To Install docker in windows : 
+https://andrewlock.net/installing-docker-desktop-for-windows/
+---------------------------------------------
+Connect MySQL Server through Windows Command Prompt : 
+
+Run below commands to project root in command prompt : 
+1) mysql -u YOUR_DB_USER_NAME -p      (Press Enter after writing the this command.)
+2) On the next step, you have to enter a password. If your password is blank then just press the Enter button.
+3) SHOW DATABASES;       (To see list of all databases.)
+4) USE YOUR_DATABASE_NAME;    (From this list select the database of your choice by running the command.)
+5) All is set. Now you can run the MySQL queries against the selected database. Run any queries of your choice.
+--------------------------------------------------------------------------------
+Export database using command prompt :  
+*) mysqldump -u [username] -p [database name] > [database name].sql 
+  OR 
+  mysqldump -u [username] -p [password] [database name] > [database name].sql
+--------------------------------------------------------------------------------
+To get unicode characters value :
+https://unicode-table.com/en/sets/arrow-symbols/
+--------------------------------------------------------------------------------
+

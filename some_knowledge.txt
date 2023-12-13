@@ -1,0 +1,192 @@
+1) Count number of occurance of each character from sentence in php.
+
+ANS : 
+$str = "This is test.";
+$strCount = [];
+for ($i = 0 ; $i <= strlen($str) ; $i++){
+	if(substr($str,$i,1) !== ''){
+      if(!isset($strCount[substr($str,$i,1)])){
+          $strCount[substr($str,$i,1)] = 1;
+      }else{
+          $strCount[substr($str,$i,1)]++;
+      }
+    }
+}
+print_r($strCount);
+
+2) Check if array contains duplicate items and return array with only duplicate values in jquery
+var reportRecipients = ['AAA', 'XYZ', 'AAA', 'ABC', 'XXX', 'XYZ', 'PQR'];
+var recipientsArray = reportRecipients.sort(); 
+
+var reportRecipientsDuplicate = [];
+for (var i = 0; i < recipientsArray.length - 1; i++) {
+    if (recipientsArray[i + 1] == recipientsArray[i]) {
+        reportRecipientsDuplicate.push(recipientsArray[i]);
+    }
+}
+console.log(reportRecipientsDuplicate);
+
+*) Same logic in php :--
+$reportRecipients = ['AAA', 'XYZ', 'AAA', 'ABC', 'XXX', 'XYZ', 'PQR','AAA'];
+$newArr = array_unique($reportRecipients);
+print_r(array_unique(array_diff_assoc($reportRecipients,$newArr)));
+
+
+3) What is a Facade Laravel?
+Ans : 
+The facade pattern is a software design pattern that is often used in object-oriented programming.
+A facade is a class wrapping a complex library to provide a simpler and more readable interface to it.
+(https://www.sitepoint.com/how-laravel-facades-work-and-how-to-use-them-elsewhere/)
+
+4) What is difference between laravel built in auth and Passport package?
+
+5) What is object prototyping in jquery? 
+(Ans : https://www.w3schools.com/js/js_object_prototypes.asp)
+
+6) What is difference between let and var in javascript? 
+(Ans : https://stackoverflow.com/questions/762011/whats-the-difference-between-using-let-and-var)
+
+7) What is polymorphic relationship in laravel?
+(Ans : https://blog.logrocket.com/polymorphic-relationships-laravel/)
+
+8) What are Traits in php?
+Ans: 
+PHP only supports single inheritance: a child class can inherit only from one single parent.
+So, what if a class needs to inherit multiple behaviors? OOP traits solve this problem.
+Traits are used to declare methods that can be used in multiple classes. Traits can have methods and abstract methods that can be used in multiple classes, and the methods can have any access modifier (public, private, or protected).
+(https://www.w3schools.com/php/php_oop_traits.asp)
+
+9) What is an abstract class in PHP?
+Ans : 
+Abstract classes and methods are when the parent class has a named method, but need its child class(es) to fill out the tasks.
+An abstract class is a class that contains at least one abstract method. An abstract method is a method that is declared, but not implemented in the code.
+An abstract class or method is defined with the abstract keyword
+(https://www.w3schools.com/php/php_oop_classes_abstract.asp)
+
+10) Give an example of polymorphism in php. 
+(Ans : https://www.phptutorial.net/php-oop/php-polymorphism/)
+
+11) How do MySQL indexes work?
+(Ans : https://stackoverflow.com/questions/3567981/how-do-mysql-indexes-work)
+
+12) What is queue in laravel?
+Ans : 
+Laravel queues provide a unified API across a variety of different queue backends, such as Beanstalk, Amazon SQS, Redis, or even a relational database. Queues allow you to defer the processing of a time consuming task, such as sending an email, until a later time.
+(https://laravel.com/docs/8.x/queues)
+
+13) What is HTTP middleware?
+Ans : 
+HTTP middleware is a technique for filtering HTTP requests. Laravel includes a middleware that checks whether application user is authenticated or not.
+
+14) What is reverse routing in Laravel?
+Ans : 
+Reverse routing is a method of generating URL based on symbol or name. It makes your Laravel application flexible.
+
+15) What is dependency injection in Laravel?
+Ans: 
+Dependency injection is when you pass as parameter an object that follows a specific protocol.
+
+Imagine that you want to develop a messaging software that allow you to write and send messages to different senders like e-mail, Slack, Whatsapp, Telegram, etc.
+
+If we design such messaging software we need at least two classes, one for write the messages (WriteMessage class) and another ones for send the message (SendEmail class, SendSlack class, etc). Each of the classes that we use for send messages should follow a protocol/interface so methods with common names like “setMessage” or “send” are used in order to keep some kind of standard (protocol/interface).
+
+When the class that we use for write e-mails is instantiated we can pass a sender object (SendEmail, SendSlack, etc) as parameter in their constructor and because the sender object follow a protocol/interface the object responsible of write the e-mails knows which is the method used for set (setMessage) and send (send) the message.
+(https://stackoverflow.com/questions/33328818/dependency-injection-in-laravel)
+
+16) Out of following : 
+$a = '1';
+$b = &$a;
+$b = "2$b";
+echo $a.", ".$b;
+
+Ans : 21, 21
+
+
+17) Remove duplicate elements from array without using array functions in php.
+
+Logic 1: 
+$array = [2,4,4,5,6,8,2,'a', 'b', 'c', 'b'];
+$uniquearray = array();
+foreach ($array as $key => $value) {
+ $uniquearray[$value] = $key;
+}
+$final = array();
+foreach ($uniquearray as $key => $value) {
+ $final[] = $key;
+}
+print_r($final);
+-------------------
+Logic 2 : 
+$array = [2,4,4,5,6,8,2,'a', 'b', 'c', 'b'];
+$temp = [];
+foreach ($array as $key => $value) {
+ $temp[$value] = $value;
+}
+print_r(explode(',',implode(',',$temp)));
+-----------
+Logic 3 : 
+$array = [2,4,4,5,6,8,2,'a', 'b', 'c', 'b'];
+$unique = array();
+foreach($array as $v){
+  isset($k[$v]) || ($k[$v]=1) && $unique[] = $v;
+}
+print_r($unique);
+-----------
+For more logic : https://www.quizcure.com/php/remove-duplicate-elements-from-array-in-php-without-using-function
+
+Output : 
+Array
+(
+    [0] => 2
+    [1] => 4
+    [2] => 5
+    [3] => 6
+    [4] => 8
+    [5] => a
+    [6] => b
+    [7] => c
+)
+
+
+18) Write a program to print prime numbers between a range of two numbers. For example. 13 and 199. Print all prime numbers between 13 and 199.
+
+$start = 10;
+$end = 20;
+echo "Prime numbers between ".$start." and ".$end." are: \n";
+for($i = $start; $i < $end; $i++) {
+  $n = 0;
+  // Core logic to check prime number
+  for($j = 2; $j < ($i/2+1); $j++) {
+    if($i % $j == 0){
+      $n++;
+      break;
+    }
+  }
+
+  // Print number if it is prime
+  if ($n == 0){
+    echo $i." ";
+  } 
+}
+
+Output : 
+Prime numbers between 10 and 20 are: 
+11 13 17 19
+
+
+19) Get all the digits in currency value from string.
+
+$str ="Testing $1,036.16 values and $10,00,000 for $50,000 rows and -$1.42 columns also test for $100 and $50 only .";
+preg_match_all('/((\\d{1,3})(?:\.|\,))?(\\d{1,3})(?:\.|\,)?(\\d{1,3})/', $str, $matches);
+print_r($matches[0]);
+
+Output :
+Array
+(
+    [0] => 1,036.16
+    [1] => 10,00,000
+    [2] => 50,000
+    [3] => 1.42
+    [4] => 100
+    [5] => 50
+)

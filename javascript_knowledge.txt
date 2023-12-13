@@ -1,0 +1,37 @@
+
+https://stackoverflow.com/questions/9549780/what-does-this-symbol-mean-in-javascript
+
+1) !!expr (two ! operators followed by an expression) returns a Boolean value (true or false) depending on the truthiness of the expression. It makes more sense when used on non-boolean types. Consider these examples, especially the 3rd example and onward:
+
+!!false === false
+!!true === true
+
+!!0 === false
+!!parseInt("foo") === false // NaN is falsy
+!!1 === true
+!!-1 === true  // -1 is truthy
+!!(1/0) === true  // Infinity is truthy
+
+!!"" === false // empty string is falsy
+!!"foo" === true  // non-empty string is truthy
+!!"false" === true  // ...even if it contains a falsy value
+
+!!window.foo === false // undefined value is falsy
+!!undefined === false // undefined primitive is falsy
+!!null === false // null is falsy
+
+!!{} === true  // an (empty) object is truthy
+!![] === true  // an (empty) array is truthy; PHP programmers beware!
+
+Examples : 
+console.log(undefined);   // -> undefined
+console.log(!undefined);  // -> true
+console.log(!!undefined); // -> false
+
+console.log('abc');   // -> abc
+console.log(!'abc');  // -> false
+console.log(!!'abc'); // -> true
+
+console.log(0 === false);   // -> false
+console.log(!0 === false);  // -> false
+console.log(!!0 === false); // -> true

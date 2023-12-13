@@ -1,0 +1,88 @@
+1) A/an ______ is an identifier for a simple value in php?
+-> A constant is an identifier (name) for a simple value. The value cannot be changed during the script. A valid constant name starts with a letter or underscore (no $ sign before the constant name). Note: Unlike variables, constants are automatically global across the entire script.
+----------------------------------------------
+2) You can not use an identifier that is the same as a built-in PHP function.
+-> false
+
+-> Identifiers are the names of variables. (The names of functions and classes are also identifiers)
+Identifiers can be of any length and can consist of letters, numbers, and underscores.
+
+Identifiers cannot begin with a digit.
+
+In PHP, identifiers are case sensitive. $tireqty is not the same as $TireQty. Trying to use them interchangeably is a common programming error. Function names are an exception to this rule: Their names can be used in any case.
+
+A variable can have the same name as a function. This usage is confusing, however, and should be avoided. Also, you cannot create a function with the same name as another function.
+-----------------------------------------------------
+3) There are ________ scalar data types in PHP.
+
+4
+boolean.
+integer.
+float.
+string.
+-----------------------------------------------
+4) _____ is a special datatype in php
+
+-> Null is a special data type which can have only one value: NULL.
+
+-> PHP supports the following data types:
+
+String
+Integer
+Float (floating point numbers - also called double)
+Boolean
+Array
+Object
+NULL
+Resource
+-----------------------------------
+5) The PHP integer range is typically equivalent to the range of a _______ on your platform's C compiler.
+-> long data type
+-> Integers are whole numbers, like 1, 12, and 256. The range of acceptable values varies according to the details of your platform but typically extends from -2,147,483,648 to +2,147,483,647. Specifically, the range is equivalent to the range of the long data type of your C compiler.
+--------------------------------------
+6) Octal values are representing by a sequence of digits beginning with a leading zero. -> true
+------------------------------------------
+7) Hexadecimal numbers must use upper-case letters -> false
+------------------------------------------------------
+8) _____ returns true if the given parameters result in a valid date. -> checkdate(int $month, int $day, int $year): bool
+-------------------------------------------------------
+9) _____ calculates and returns the cyclic redundancy checksum for a value. -> crc32()
+------------------------------------------------------------
+10) ______ returns an array of substrings created by spllitting its string parameter wherever a given separator is found. -> explode
+-----------------------------------------------------
+11) ____ returns true if the named extension is loaded.   ->  extension_loaded()
+----------------------------------------------------------------
+12) _____ reads a file at a given path and returns an array of lines from it.   -> fread()
+-------------------------------------------------------
+13) _____ commits any changes to a file referenced by a given handle to disk.  -> file_put_contents()
+----------------------------------------------------
+14) ____ returns Unix timestamp value representing the last time a file was modified.  -> filemtime()
+-------------------------------------------------
+15) ____ is a possible return value for the filetype function. 
+-> The filetype() function returns the file type of a file. Possible return values: fifo.
+----------------------------------------------
+16) PHP built-in constructs are case sensitive. -> true
+---------------------------------------------
+17) Whitespace is always problematic in PHP. -> false
+-----------------------
+18) _____ are ignored by PHP.  -> comments
+-------------------------------------
+19) PHP supports shell-style comments that use a hash # character. -> true
+---------------------------
+20) The first character of a PHP identifier must be ________.
+----------------------------------------------------
+21) PHP function names are not case-sensitive. -> true
+-------------------------
+https://www.w3schools.com/php/php_ref_keywords.asp
+---------------------------
+22) PHP reserved words 
+---------------
+23) Floating-point numbers are often referred to as _____________ numbers.
+------------------------------
+24) PHP Floating-point values are approximate representations of numbers.
+-------------
+25) Double quots support the ____ string escape.
+--------------------
+26) Variable declared outside a function are ___.
+--------------------
+27) 

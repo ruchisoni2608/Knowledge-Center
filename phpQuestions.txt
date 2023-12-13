@@ -1,0 +1,656 @@
+
+1) Which function returns (and caches) the owner ID number?
+Answer: fileowner()
+
+2) Which of the following is the correct way to implement a do-while loop?
+Answer: $j=0; do { print "$j"; } while ($j > 0);
+
+3)Which statement will skip the rest of the current loop iteration and continue execution at the beginning of next iteration.
+Answer: continue
+
+4) Which of the following is correct to show a message for an exception?
+Answer: throw new Exception ("Invalid data");
+
+5) What term refers to the ability to shorten Extra_Long_Names improving readability of source code?
+Answer: Aliasing
+
+6) Which operator performs the same function as x=x%y?
+Answer: %=
+
+7)The control error operator is:
+Answer: @
+
+8)Which of the following is the not equal operator?
+Answer: !=
+
+9) What are the levels of visibility possible for a variable or method?
+Answer: Public, Private and Protected
+
+10) Which Perl Compatible Regex function takes a regex pattern as first argument, a string to match against as second argument, and an optional array variable for returned matches?
+Answer: preg_grep
+
+11) Which Perl Compatible Regex function inserts escape characters into strings that are intended for use as regex patterns.
+Answer: preg_quote
+
+12)Which of the following shifts the bits of $a $b steps to the left?
+Answer: $a << $b
+
+13) What PHP function returns the arctangent in radians of a numerical argument?
+Answer: atan()
+
+14) Which function is used to start tracking a user?
+Answer: session_start();
+
+15) What statement will delete session files?
+Answer: session_destroy();
+
+16) How are sessions tracked on PHP
+Answer: With code rewriting using the PHP Session reference variable
+
+17) Which function changes server parameters and status at runtime?
+Answer: Memcache::setServerParams
+
+18) Which function forces a write of all buffered output to the resource pointed to by the file handle?
+Answer: fflush
+
+19) Single-line comments in PHP use the following:
+Answer: //
+
+20) The ability of a class to protect access to its internal member variables is called:
+Answer: encapsulation
+
+21) You can use what function in order to check if a constant is set?
+Answer: defined();
+
+22) Which of these will perform integer rather than floating point division?
+Answer: intval(x/y);
+
+23) ______________ is a mechanism for storing data in the remote browser and thus tracking or identifying return users.
+Answer: Cookies
+
+24) Using the Zip Archive Class, which of the following will include a file to a ZIP archive from a given path?
+Answer: zipArchive::addFile
+
+25) Which of the following is an example of predefined cURL constant?
+Answer: All of these
+
+CURLAUTH_ANYSAFE
+CURLFTPSSL_NONE
+CURLOPT_FILE
+CURLOPT_VERBOSE
+
+26) Which of the following refers to a set of functions that allows you have access to multiple supported databases without writing your own wrapper functions?
+Answer: PHP DBX
+
+27) Which of the following is the correct syntax to retrieve an object from the memcache module?
+Answer: $result = $memcache->get('key');
+
+28) _____________ attempts to establish an FTP connection to a remote server by emulating an FTP client.
+Answer: FTP ftp_connect()
+
+29) Which of the following will open the file "time.txt" as readable?
+Answer: fopen("time.txt","r");
+
+30) Which character must be set in the $mode argument for fopen($file, $mode) to open a file for reading and writing?
+Answer: r+;
+
+31) Which of the following is the correct way to implement a "for" control structure?
+Answer: for($i=0; $i<10; $i++){ // do something }
+
+32) Which of the following is the only keyword that can be written before the namespace at the top of the file?
+Answer: declare
+
+33) What is the correct way to access the property of a PHP object?
+Answer: $obj->property
+
+34) Select the convention sign used to indicate private variables and functions:
+Answer: _ for $_name
+
+35) Arrays can be sorted with which of the following functions?
+Answer: arsort(), ksort() and uksort();
+
+36) Private members are accessible to:
+Answer: The class itself and the classes that inherit from it
+
+37) Which function returns the square root of its argument, with number of decimal places set by the optional scale factor?
+Answer: bcsqrt()
+
+38) What 2 types of parsers are used in PHP?
+Answer: T_ABSTRACT & T_ARRAY_CAST
+
+39) What does MIME stand for?
+Answer: Multipurpose Internet Mail Extensions
+
+40) Which configuration directive defines a comma separated list of server urls to use for session storage?
+Answer: session.save_path
+
+41) Which function gets permissions for the given file?
+Answer: fileperms
+
+42) Which function checks whether a file or directory exists?
+Answer: file_exists
+
+43) PHP constants:
+Answer: All of these
+
+Do not have a dollar sign ($) before them.
+May be defined and accessed anywhere without regard to variable scoping rules
+May not be redefined or undefined once they have been set.
+May only evaluate to scalar values.
+
+44) Which PHP operator type allows evaluation and manipulation of specific bits within an integer?
+Answer: Bitwise operators
+
+45) At compile time static values are bound with
+Answer: a name
+
+46) Which Perl Compatible Regex character will cause any special character to be treated as a simple matching character?
+Answer: \
+
+47) Session files should not be stored on a directory viewable from the Web server because:
+Answer: Malicious users may access other users' login details
+
+48) Which API reads in an XML file and creates a "walkable" object tree in memory, so it can be used in large documents?
+Answer: DOM
+
+49) What APIs are used for handling XML documents?
+Answer: Document Object Model (DOM) and Simple API for XML (SAX)
+
+50) ________________ tests for the end of file on a file pointer.
+Answer: feof()
+
+51) Include files must have the file extension:
+Answer: none of these
+
+52) What is the term for using a class to create an object?
+Answer: Instantiation
+
+53) PHP constants:
+Answer: All of these apply
+
+Can be accessed anywhere in the script regardless of the scope.
+Can be used as default argument values.
+Cannot change during the execution of the script.
+Follow the same rules as labels in PHP.
+
+54) Which statement can replace several else Statements?
+Answer: switch
+
+55) To retrieve information from a form that is submitted using the "get" method, use ___________.
+Answer: $_GET[];
+
+56) Which POSIX function takes the following two string arguments and an optional third-array argument: A POSIX-style regular expression pattern, and the target string to be matched?
+Answer: ereg()
+
+57) Which PHP operator will attempt to execute its contents as a shell command?
+Answer: (` `)
+
+58) What function takes any number of numerical arguments and returns the largest of the arguments?
+Answer: max()
+
+59) To unregister a session variable STRING use:
+Answer: session_unregister(STRING);
+
+60) Which of the following is correct to select a database in MS SQL?
+Answer: mssql_select_db(STRING)
+
+61) Select the variable used to set the php.ini file to send emails containing the address of the default PHP mail sender.
+Answer: sendmail_from
+
+62) Which configuration directive is used to transparently failover to other servers on errors?
+Answer: memcache.allow_failover
+
+63) Which PHP function is identical to the C fwrite() function?
+Answer: fputs()
+
+64) Which function writes a string to a file?
+Answer: file_put_contents
+
+65) To denote strings in PHP, you can use both double quotes " " and which other characters?
+Answer: single quotes ' '
+
+66) What kind of elements can be contained in constants?
+Answer: All of these
+
+Boolean
+Float
+String
+integer
+
+67) Which PHP operator type allows you to execute its contents as a shell command?
+Answer: Execution operator
+
+68) PHP variables start with the following symbol:
+Answer: $
+
+69) Which POSIX function takes a pattern, a target string, and an optional limit on the number of portions to split the string into.
+Answer: split
+
+70) What function raises the first argument to the power of the second argument, with decimal places to be specified by the scale factor?
+Answer: bcpow
+
+71) Instead of a single new line character some clients require which characters?
+Answer: "\r\n"
+
+72) Which function parses input from a file according to a format?
+Answer: fscanf
+
+73) Which file should be edited to set configuration directives?
+Answer: php.ini
+
+74) Which of the following is correct in PHP?
+Answer: Zero is interpreted as false
+
+75) Which parameter of setcookie() defines the amount of time for which a cookie is valid?
+Answer: expire
+
+76) Which control structure allows you to quickly traverse through an array?
+Answer: foreach loops
+
+77) Which types of code can be affected by namespaces?
+Answer: Classes, functions and constants.
+
+Although any valid PHP code can be contained within a namespace, only four types of code are affected by namespaces: classes, interfaces, functions and constants.
+
+78) Which cURL function returns the last error number?
+Answer: curl_errno
+
+79) Which of the following is an invalid constant name?
+Answer: 2DAY
+
+80) Which PHP operator allows you to assign values to variables and arrays?
+Answer: "="
+
+81) What is the term for breaking the binding between a variable name and variable content?
+Answer: Unsetting references.
+
+82) Which is the operator for the integer remainder from the division of two values?
+Answer: %
+
+83) Which predefined Memcache function turns on data compression?
+Answer: MEMCACHE_COMPRESSED
+
+84) Which compressed file type can be decompressed without specifying the extension?
+Answer: zip
+
+85) Which configuration directive, in conjunction with memcache.allow_failover, defines how many servers to try when setting and getting data?
+Answer: memcache.max_failover_attempts
+
+86) The correct way to create a numeric variable "v" that might have any real number is:
+Answer: $v;
+
+87) Which of the following databases are supported by PHP?
+Answer: All of these
+
+MySQL abd MS SQL
+Oracle and Informix
+PostgreSQL and Frontbase
+mSQL and Interbase
+
+88) Which of the following is the line to enable in the php.ini file for Windows in order to be able to use DBX?
+Answer: extension=php_dbx.dll
+
+89) Which of the following is the correct way to connect to a mySQL Server?
+Answer: mysql_connect(SERVER, USER, PASSWORD);
+
+90) Which of the following will return variables from a form sent by the HTTP POST method in PHP?
+Answer: $_POST
+
+91) Which version of PHP introduced object oriented programming?
+Answer: PHP III
+
+92) Which of the following will correctly create a constant "const"?
+Answer: const const;
+
+93) What variable is used by session cookies as a user ID?
+Answer: $PHPSESSID
+
+94) Functions that represent a behavior of a class are called _________.
+Answer: Methods
+
+95) Which zip function retrieves the compressed size of a directory entry?
+Answer: zip_entry_compressedsize
+
+96) What does cURL stand for?
+Answer: Client URL
+
+97) Which function clears the cache of file status info?
+Answer: clearstatcache
+
+98) Which method defines HTTP Authentication using Apache Server?
+Answer: .htaccess files
+
+99) What is the most widely accepted meaning of the acronym "PHP" today?
+Answer: PHP: Hypertext Preprocessor
+
+100) _______________ defines a cookie to be sent along with the rest of the HTTP headers.
+Answer: setcookie()
+
+101) The file handle argument in fread() allows you to specify ___________.
+Answer: the number of bytes you wish to read
+
+102) $count = $count + 8; can be written as:
+Answer: $count += 8;
+
+103) Which of the following is a special PHP variable that is used under HTTP Authentication?
+Answer: $_PHP_AUTH_USER
+
+104) XML is used for:
+Answer: All of these
+Data manipulation and storage
+Display formatted data in a browser using style sheets.
+transfer data between organizations
+transfer data between software applications
+
+105) Which kind of reference action allows you to have two variables referring to the same content?
+Answer: Assign by reference.
+
+106) ____________ describes the structure of a class of XML documents, specifying how elements are related and allowed.
+Answer: Document Type Definition
+
+107) Which parameter of setcookie() indicates that the cookie should only be transmitted over a secure HTTPS connection from the client?
+Answer: secure
+
+108) Which of the following can be included in a phar file?
+Answer: All of these
+a manifest describing the contents
+a signature for verifying integrity
+a stub
+the file contents
+
+109) Which of the following will encrypt a password?
+Answer: crypt($password);
+
+110) Which of the following will connect to a data base using PEAR?
+Answer: DB::connect(data_source_name);
+
+111) Which of the following will return 1 if the Memcache session handler is available and 0 if not?
+Answer: MEMCACHE_HAVE_SESSION
+
+112) Which bz library function returns bzip2 encoded data after compressing a given string?
+Answer: bzcompress()
+
+113) Which function opens a memcached server persistent connection?
+Answer: Memcache::pconnect
+
+114) On the additional header that PHP allows you to include on an email you can add:
+Answer: All of these
+
+Content-transfer-encoding
+Content-type
+MIME version
+X-mailer and version number
+
+115) __________ is the same as setcookie() but the cookie value will not be automatically urlencoded when sent to the browser.
+Answer: setrawcookie()
+
+116) Which function enables automatic compression of large values?
+Answer: Memcache::setCompressThreshold
+
+117) Which of the following will send queries to a database using PEAR?
+Answer: none of these
+
+$dbconn=query(QUERY)
+$dbconn=query->(QUERY)
+DB::query(QUERY)
+DB::query->(QUERY)
+
+118) Which PHP library allows you to connect to and communicate with different types of servers using many different types of protocol?
+Answer: cURL
+
+119) Which configuration directive sets the size of data chunks for transfers?
+Answer: memcache.chunk_size
+
+120) What does PEAR stand for?
+Answer: PHP Extension and Application Repository
+
+121) Which of the following functions are used to encrypt passwords?
+Answer: md5() and crypt()
+
+122) Which cURL function sets an option on the given cURL session handle?
+Answer: curl_setopt
+
+123) Which of the following are examples of resource types in cURL?
+Answer: cURL handle and a cURL multi handle
+
+124) Which API treats XML as flow-through string data?
+Answer: CAX
+
+125) What does XML mean?
+Answer: eXtensible Markup Language
+
+126) singleton design pattern
+Answer: Sometimes it's important to have only one instance for a class. For example, in a system there should be only one window manager (or only a file system or only a print spooler). Usually singletons are used for centralized management of internal or external resources and they provide a global point of access to themselves.
+
+127) PHP magic constant
+Answer: __LINE__
+
+128) When a small window pops up in front of the browser asking your username and a password, what kind of Authentication is being used?
+Answer: HTTP
+
+129) In session management cookies are usually not used for:
+Answer: logging the user in for the first time
+
+130) Which function returns the version of the server?
+Answer: Memcache::getVersion
+
+131) Which character must be set in the $mode argument for fopen($file, $mode) to open a file for reading and writing?
+Answer: r+;
+
+132) Which of the following will open the file "time.txt" as readable?
+Answer: fopen("time.txt","r");
+
+133) _____________ attempts to establish an FTP connection to a remote server by emulating an FTP client.
+Answer: FTP ftp_connect()
+
+134) Which of the following is the correct syntax to retrieve an object from the memcache module?
+Answer: $result = $memcache->get('key');
+
+135) Which of these will perform integer rather than floating point division?
+Answer: intval(x/y)
+
+136) $count = $count * 3; can be written as:
+Answer: $count *= 3;
+
+137) What is the correct way to add 1 to the $counter variable?
+Answer: $counter++;
+
+138) Which operator appends the argument on the right side to the argument on the left side?
+Answer: .=
+
+139) With the ________ bitwise operator, the bits set in $a are not set, and the not set bits are then set.
+Answer: ~
+
+140) Which bitwise operator will set the bits that are set in either $a or $b.
+Answer: " | "
+
+141) Which of the following allows you to set a user-defined exception handler function?
+Answer: set_exception_handler
+
+142) In an object method, which of the following is always a reference to the caller object?
+Answer: $this
+
+143) Which kind of reference is used by creating a local variable in a function and a variable in the calling scope referencing the same content?
+Answer: Assign by reference.
+
+144) Which of the following returns the remainder of $a divided by $b?
+Answer: $a % $b
+
+145) What PHP operator is used to access methods and properties of objects?
+Answer: " -> "
+
+146) Which interface type allows you to chain methods of an object together?
+Answer: Fluent Interfaces
+
+147) Interfaces define a "contract" specifying that an object is capable of implementing a method ____________.
+Answer: Specifying exactly how is to be done.
+
+148) What is the correct way to create a function in PHP?
+Answer: function yourFunction()
+
+149) Which of the following will print "Hi " followed a name argument passed to the function?
+Answer: function sayHi ($name){ print "Hi $name"; }
+
+150) A special method to perform any activity required to instantiate an object is called a(n) __________.
+Answer: Constructor
+
+151) Which POSIX character matches zero or more instances of the previous regular expression?
+Answer: *
+
+152) Which POSIX character matches any character?
+Answer: .
+
+153) If an exception is not caught, a PHP Fatal Error will be issued with what message?
+Answer: "Uncaught Exception ..."
+
+154) Which statement retrieves the value of a function after it is called?
+Answer: return
+
+155) Which "magic" constant implemented inside an include, returns the directory of the included file.
+Answer: _DIR_
+
+156) Which function returns a string containing a byte-stream representation of any value that can be stored in PHP?
+Answer: serialize()
+
+157) How do you write "Hello World 2010" in PHP?
+Answer: echo "Hello World 2010";
+
+158) Which command returns the filename component of a path?
+Answer: string basename ( string $path [, string $suffix ] )
+
+159) Which file mode will read and write to the end of an existing file or create a new file?
+Answer: "a+"
+
+160) Which server verifies the name password and mail spool location?
+Answer: SMTP Server
+
+161) What does MTA stand for?
+Answer: Mail Transfer Agent
+
+162) The agent used to collect and access the mail spool is called:
+Answer: Mail Transfer Agent - not sure
+
+163) __________ is an extension that provides a way to put entire PHP applications into a single file called PHP Archive for easy distribution and installation.
+Answer: phar
+
+164) Which function is used to connect to a database using Authentication by SQL Database Query?
+Answer: @mysql_connect("localhost","databaseuser","password")
+
+165) Which function takes a single argument and returns the largest integer that is less or equal to that argument?
+Answer: floor()
+
+166) Which function takes a single argument and returns the smallest integer that is greater than or equal to that argument?
+Answer: ceil()
+
+167) What is the expression for returning the square root of 2?
+Answer: sqrt(2)
+
+168) Which Perl Compatible Regex function takes a regex pattern and an array and returns an array of the elements of the input array that matched the pattern?
+Answer: preg_grep
+
+169) Protected members are available to:
+Answer: The class itself and the classes that inherit from it
+
+170) Which of these variables has an illegal name?
+Answer: $your-Var
+
+171) A(n) _____________ is an ordered map that assigns values to keys:
+Answer: array
+
+172) What PHP type represents a series of characters?
+Answer: string
+
+173) Which of the following is NOT a correct way to specify a string?
+Answer: alfanum syntax
+
+Strings in PHP can be specified in four different ways: single quoted, double quoted, heredoc syntax and (since PHP 5.3.0) nowdoc syntax
+
+174) Which of the following allows you to express any real number?
+Answer: double
+
+175) Which of the following is the correct way to create a reference to a global variable?
+Answer: $var =& $GLOBALS["var"];
+
+176) Which of the following provides a means to access the same content on PHP variables by different names?
+Answer: References
+
+177) Which PHP operator is used to concatenate strings?
+Answer: "."
+
+178) What PHP token that allows access to static, constant, and overridden properties or methods of a class?
+Answer: ::
+
+179) Which PHP operator type returns the result of string arguments?)
+Answer: String operators
+
+180) Which of these restrictions applies to namespace implementation?
+Answer: Nested namespaces are prohibited.
+
+181) What term applies to an identifier with a namespace separator that begins with a namespace separator, such as \Foo\Bar?
+Answer: Fully qualified name.
+
+182) Which of the following objects lets you create code which specifies which methods a class must implement, without specifying how the objects are handled?
+Answer: Interfaces
+
+183) Which Interface allows you to use a design pattern that is characteristically changed with the instantiation of objects?
+Answer: Instantation Design Interface
+
+184) Which POSIX character matches the beginning of a string only?
+Answer: ^
+
+185) Which of the following are two broad classes of regular expressions that PHP works with?
+Answer: POSIX and PHP-compatible regex
+
+186) Which statement allows you to end a loop?
+Answer: break
+
+187) This "magic" constant refers to the name of the current namespace and it is defined in compile-time
+Answer: _NAMESPACE_
+
+188) What is the name for instances of a class that contain all the internal data and state information need for the application to run
+Answer: Objects
+
+189) ___________ allows a class to be defined as being a member of more than one category of classes
+Answer: Polymorphism
+
+190) The ability to define a class of one kind as being a subtype of a different kind of class is called:
+Answer: Inheritance
+
+191) Instantiate an object Demo: require_once('class.Demo.php');
+Answer: $objDemo = new Demo();
+
+192) Which of the following is correct for adding a comment in a PHP script?
+Answer: /* comment */
+
+193) Which function returns (and caches) file permissions level?
+Answer: fileperms(file)
+
+194) Which PHP function sets file modification time or creates a file if it does not exist?
+Answer: touch(file, [time])
+
+195) Which of these PHP file open modes are valid for the specified conditions?
+Answer: All of these
+
+196) The ____________ function can be used in combination with the PHP header() construct to assemble and send file downloads.
+Answer: fpassthru
+
+197) Which function returns (and caches) the time a file was last accessed?
+Answer: fileatime(file)
+
+198) How do you modify the php.ini file to have sessions work correctly on windows?
+Answer: change session.save_path = /tmp to session.save_path=C:/temp
+
+199) Which function gets statistics from all servers in a pool?
+Answer: Memcache::getExtendedStats
+
+200) Which of the following functions returns a Boolean value after attempting to send a message?
+Answer: mail()
+
+201) Which of the following is the correct way to connect to a MySQL database?
+Answer: mysql_connect("localhost");
+
+202) Which files should be used to install cURL in an include directory?
+Answer: easy.h and curl.h files
+
+203) Which function returns the largest number that may be returned by rand()?
+Answer: getrandmax()

@@ -1,0 +1,15 @@
+https://docs.github.com/en/github/importing-your-projects-to-github/importing-source-code-to-github/adding-an-existing-project-to-github-using-the-command-line
+
+
+git init -b main
+git add .
+git commit -m "First commit"
+git remote add origin  <REMOTE_URL>
+git remote -v
+git push origin main
+
+
+
+
+
+https://kbroman.org/github_tutorial/pages/init.html

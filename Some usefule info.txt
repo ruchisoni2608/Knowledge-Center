@@ -1,0 +1,102 @@
+To exit from mysql cmd : 
+mysql>
+	->
+    -> \c
+mysql> exit
+Bye
+----------------------------------------------------------
+-------------------------------------------------------------------------------------------
+Add Ubuntu instance into ec2 : 
+https://www.cloudbooklet.com/create-an-ec2-instance-on-aws-with-ubuntu-18-04/
+
+To generate ftp in AWS : 
+https://medium.com/tensult/configure-ftp-on-aws-ec2-85b5b56b9c94
+
+To setup laravel app in AWS ec2 instance : 
+https://medium.com/nerd-for-tech/how-to-deploy-laravel-project-on-ec2-aws-6d004a57bb1f
+
+To add phpmyadmin in AWS ec2 instance (ubuntu) : 
+https://www.tutsmake.com/how-to-install-phpmyadmin-amazon-ec2-ubuntu/
+
+Usernames of EC2 instances : 
+https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/connection-prereqs.html
+
+Setup multiple website in single ec2 instance :
+https://www.eternalsoftsolutions.com/blog/how-to-setup-multiple-websites-in-a-single-aws-instance/
+
+https://w3path.com/point-domain-to-aws-ec2-instance/
+
+*) 'yum' is equivalent to "sudo apt-get" in ubuntu.
+-------------------------------------------------------------------------------------------
+"Incorrect format parameter" error in phpmyadmin : 
+
+1) sudo vi /etc/php/7.4/apache2/php.ini
+
+update below value : 
+
+upload_max_filesize=64M
+post_max_size=64M
+max_execution_time-1000
+
+-------------------------------------------------------------------------------------------
+Install PHP Composer on Linux machine.
+
+To run below command to Update your packages:
+sudo apt-get update
+
+To run below command to Install the curl utility:
+sudo apt-get install curl
+
+To run below command to Download the installer:
+sudo curl -s https://getcomposer.org/installer | php
+
+To run below command to Move the composer.phar file:
+sudo mv composer.phar /usr/local/bin/composer
+
+Test composer installed :
+composer
+-------------------------------------------------------------------------------------------
+If AWS ec2 public ip returns "the connection has timed out" or "take too long to load in browser" : 
+I have changed to Security Group to allow All Traffic from Anywhere, to no avail.
+HTTP TCP 80 0.0.0.0/0
+HTTP TCP 80 ::/0
+All traffic All All 0.0.0.0/0
+All traffic All All ::/0
+SSH TCP 22 0.0.0.0/0
+SSH TCP 22 ::/0
+All ICMP - IPv4 ICMP All 0.0.0.0/0
+All ICMP - IPv4 ICMP All ::/0
+
+-------------------------------------------------------------------------------------------
+To remove index.php from laravel url in AWS ec2 :
+1) First of All you need to set AllowOverride All in /etc/apache2/apache2.conf. Find the following block:
+<Directory /var/www/>
+        Options Indexes FollowSymLinks
+        AllowOverride All
+        DirectoryIndex index.php
+        Require all granted
+</Directory>
+2) then you need to modify /etc/apache2/mods-available/dir.conf and move index.php first :
+<IfModule mod_dir.c>
+        DirectoryIndex index.php index.html index.cgi index.pl index.xhtml index.htm
+</IfModule>
+3) DO NOT FORGET to run : 
+sudo a2enmod rewrite
+4) and then :
+sudo service apache2 restart
+-------------------------------------------------------------------------------------------
+To add vertual host in AWS ec2 : 
+1) sudo vi /etc/apache2/ports.conf
+2) Add line below : Listen 8090 (port you wish)
+3) sudo vi /etc/apache2/sites-available/000-default.conf
+4) <VirtualHost *:8090>
+        ServerName ec2-54-66-166-79.ap-southeast-2.compute.amazonaws.com:8090
+        ServerAdmin webmaster@localhost
+        DocumentRoot /var/www/html/soga_central/public/
+
+        ErrorLog ${APACHE_LOG_DIR}/error.log
+        CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>
+5) sudo systemctl restart apache2 (Restart Apache)
+
+-------------------------------------------------------------------------------------------

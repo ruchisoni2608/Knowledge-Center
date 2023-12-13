@@ -1,0 +1,16 @@
+Setup laravel 8.x version project steps:
+
+1) composer require laravel/installer
+2) composer create-project --prefer-dist laravel/laravel ProjectName
+3) copy server.php in root and rename it with index.php
+4) cut .htaccess from public folder and paste it into root folder
+5) cd ProjectName
+6) composer require laravel/ui
+7) php artisan ui vue --auth
+8) npm install
+9) npm run dev
+10) create database for new project
+11) open .env file and set base url and set database detail in .env
+12) open app/Providers/AppServiceProvider.php and put "Schema::defaultStringLength(191);" in boot function. and also add "use Illuminate\Support\Facades\Schema;" on top.
+13) php artisan migrate
+14) run project url. If style not load of login and register page. add "RewriteRule ^(css|js|images|fonts|img|less|plugins|scss)/(.*)$ public/$1/$2 [L,NC]" to .htaccess file
